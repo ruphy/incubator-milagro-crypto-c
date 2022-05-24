@@ -53,32 +53,19 @@ In order to build this library, the following packages are required:
 
 The above packages can be installed in different ways, depending on the Operating System used:
 
-* **Ubuntu 18.04 Linux**
+* **Debian/Ubuntu Linux**
 
 ```
-sudo dpkg --add-architecture i386
-
-echo "add repositories cache"
-sudo apt-get update -y
-
-echo "install packages"
 sudo apt-get install -y \
      build-essential \
-     cmake \
-     doxygen \
-     parallel \
-     mingw-w64 \
-     wine64 \
-     wine32 \
-     lcov \
-     python3-dev \
-     python3-pip \
-     gcc-multilib \
-     git \
-     rpm \
-     checkinstall
+     cmake
+     python3-pip
 
-sudo pip3 install cffi autopep8
+sudo pip3 install cffi
+
+mkdir build && cd build/
+cmake ..
+make -j4
 ```
 
 * **Fedora 30 Linux**
